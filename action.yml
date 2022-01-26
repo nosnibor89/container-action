@@ -1,0 +1,12 @@
+name: 'Rob custon container action'
+description: 'Testing docker containers'
+inputs:
+  message:  # id of input
+    description: 'Any message'
+    required: true
+    default: 'Hello from container action'
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ input.message }}

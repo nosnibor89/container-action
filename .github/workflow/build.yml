@@ -1,0 +1,14 @@
+name: Build and Test container action
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: docker
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Test Container Action
+        uses: ./
+        with:
+          message: This message comes from the pipeline
